@@ -1,22 +1,24 @@
 <template>
   <div id="app">
-    <HelloWorld/>
-    <EarthImage/>
+    <EatPrayLoveStyles/>
+    <KungFuPandaStyles/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import EarthImage from "./components/EarthImage";
+import EatPrayLoveStyles from "./components/EatPrayLoveStyles";
+import KungFuPandaStyles from "./components/KungFuPandaStyles";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    EarthImage
+    EatPrayLoveStyles,
+    KungFuPandaStyles
   }
 };
 </script>
 
 <style>
+#app {
+}
 </style>
