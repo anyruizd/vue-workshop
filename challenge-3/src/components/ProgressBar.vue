@@ -5,6 +5,16 @@
     <div class="text-center mt-3">
       <button class="btn btn-danger mb-3" @click="lessContador">-</button>
       <button class="btn btn-primary mr-1 mb-3" @click="plusContador">+</button>
+      <b-progress class="mt-2" :max="max" show-value>
+        <b-progress
+          :value="value"
+          :class="addBackground"
+          :max="max"
+          show-value
+          class="mb-3"
+          :style="{'width' : contador+'%'}"
+        >{{ contador }}%</b-progress>
+      </b-progress>
     </div>
   </b-container>
 </template>
@@ -16,6 +26,16 @@ export default {
     return {
       contador: 0
     };
+  },
+  computed: {
+    addBackground() {
+      return {
+        "bg-success": this.contador < 25,
+        "bg-info": this.contador >= 25 && this.contador < 50,
+        "bg-warning": this.contador >= 50 && this.contador < 85,
+        "bg-danger": this.contador >= 85 && this.contador <= 100
+      };
+    }
   },
   methods: {
     lessContador() {
